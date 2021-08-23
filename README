@@ -1,0 +1,25 @@
+IMA Linux Test Project(LTP) test programs
+
+The IMA test programs included in the LTP testsuite have a number of
+LTP dependencies.  This tar creates the necessary includes, defines,
+and stub function definitions in order to run the IMA programs in a
+standalone mode.
+
+- Extract the files: tar -xvf ltp-ima-standalone.tar
+- Install openssl (and openssl-devel packages) using your distro's
+  package installer.
+- compile the test programs:  make
+- Install the test programs in /usr/local/bin: make install
+
+Changelog v2:
+- better template parsing (Roberto Sassu)
+- tst_res/resm bug fix (David Heller)
+- message cleanup
+- add signature verification
+- collect error counts
+
+Refer to http://ltp.sourceforge.net/ for more info on LTP.
+Changelog v1:
+- linux-3.13+ - support for new templates and larger digests
+Dependency on commit: 
+c502c78 ima: change the default hash algorithm to SHA1 in ima_eventdigest_ng_init()
